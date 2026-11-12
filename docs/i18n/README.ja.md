@@ -23,9 +23,9 @@
 
 | プラットフォーム | ダウンロード | インストール方法 |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` を開いて **Bluebird** を「アプリケーション」にドラッグします。初回起動時はアプリを右クリックして **開く** を選んでください（まだ署名されていません）。 |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | ZIP を展開して `Bluebird.exe` を実行します。SmartScreen が表示されたら **詳細情報 → 実行** をクリックしてください。 |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` で展開し、展開したフォルダーで `./bluebird` を実行します。 |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` を開いて **Bluebird** を「アプリケーション」にドラッグします。初回起動時はアプリを右クリックして **開く** を選んでください（まだ署名されていません）。 |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | ZIP を展開して `Bluebird.exe` を実行します。SmartScreen が表示されたら **詳細情報 → 実行** をクリックしてください。 |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` で展開し、展開したフォルダーで `./bluebird` を実行します。 |
 
 > **ご注意：** 現時点では macOS でのみテスト済みです。Windows 版と Linux 版も提供していますが、まだ十分にテストされていません。問題があれば Issues タブから報告してください。
 

@@ -23,9 +23,9 @@
 
 | Plattform | Download | Installation |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | Öffne die `.dmg` und ziehe **Bluebird** in „Programme“. Klicke beim ersten Start mit der rechten Maustaste auf die App und wähle **Öffnen** (sie ist noch nicht signiert). |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | Entpacke das Archiv und starte `Bluebird.exe`. Wenn SmartScreen erscheint, klicke auf **Weitere Informationen → Trotzdem ausführen**. |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | Entpacke mit `tar -xzf` und starte `./bluebird` im entpackten Ordner. |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | Öffne die `.dmg` und ziehe **Bluebird** in „Programme“. Klicke beim ersten Start mit der rechten Maustaste auf die App und wähle **Öffnen** (sie ist noch nicht signiert). |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | Entpacke das Archiv und starte `Bluebird.exe`. Wenn SmartScreen erscheint, klicke auf **Weitere Informationen → Trotzdem ausführen**. |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | Entpacke mit `tar -xzf` und starte `./bluebird` im entpackten Ordner. |
 
 > **Hinweis:** Bluebird wurde bisher nur unter macOS getestet. Die Builds für Windows und Linux sind verfügbar, aber noch nicht vollständig getestet. Wenn etwas nicht funktioniert, öffne bitte ein Issue im Reiter „Issues“.
 

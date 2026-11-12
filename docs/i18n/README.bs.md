@@ -23,9 +23,9 @@
 
 | Platforma | Preuzimanje | Kako instalirati |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | Otvorite `.dmg` i prevucite **Bluebird** u Applications. Pri prvom pokretanju kliknite desnim tasterom na aplikaciju i odaberite **Open** (još nije potpisana). |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | Raspakujte arhivu i pokrenite `Bluebird.exe`. Ako se pojavi SmartScreen, kliknite **More info → Run anyway**. |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | Raspakujte pomoću `tar -xzf`, a zatim pokrenite `./bluebird` iz raspakovanog foldera. |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | Otvorite `.dmg` i prevucite **Bluebird** u Applications. Pri prvom pokretanju kliknite desnim tasterom na aplikaciju i odaberite **Open** (još nije potpisana). |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | Raspakujte arhivu i pokrenite `Bluebird.exe`. Ako se pojavi SmartScreen, kliknite **More info → Run anyway**. |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | Raspakujte pomoću `tar -xzf`, a zatim pokrenite `./bluebird` iz raspakovanog foldera. |
 
 > **Napomena:** Bluebird je do sada testiran samo na macOS-u. Verzije za Windows i Linux su dostupne, ali još nisu u potpunosti testirane. Ako nešto ne radi, otvorite issue na kartici Issues.
 

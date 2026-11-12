@@ -23,9 +23,9 @@
 
 | 플랫폼 | 다운로드 | 설치 방법 |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg`를 열고 **Bluebird**를 응용 프로그램으로 드래그하세요. 처음 실행할 때는 앱을 우클릭하고 **열기**를 선택하세요(아직 서명되지 않았습니다). |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | 압축을 풀고 `Bluebird.exe`를 실행하세요. SmartScreen이 나타나면 **추가 정보 → 실행**을 클릭하세요. |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf`로 압축을 풀고, 풀린 폴더에서 `./bluebird`를 실행하세요. |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg`를 열고 **Bluebird**를 응용 프로그램으로 드래그하세요. 처음 실행할 때는 앱을 우클릭하고 **열기**를 선택하세요(아직 서명되지 않았습니다). |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | 압축을 풀고 `Bluebird.exe`를 실행하세요. SmartScreen이 나타나면 **추가 정보 → 실행**을 클릭하세요. |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf`로 압축을 풀고, 풀린 폴더에서 `./bluebird`를 실행하세요. |
 
 > **참고:** 현재까지 macOS에서만 테스트되었습니다. Windows와 Linux 빌드는 제공되지만 아직 충분히 테스트되지 않았습니다. 문제가 있으면 Issues 탭에 등록해 주세요.
 

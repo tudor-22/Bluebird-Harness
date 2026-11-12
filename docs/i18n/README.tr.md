@@ -23,9 +23,9 @@
 
 | Platform | İndir | Nasıl kurulur |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` dosyasını açın ve **Bluebird**'ü Uygulamalar'a sürükleyin. İlk açılışta uygulamaya sağ tıklayıp **Aç**'ı seçin (henüz imzalı değil). |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | Arşivi çıkarın ve `Bluebird.exe` dosyasını çalıştırın. SmartScreen görünürse **Daha fazla bilgi → Yine de çalıştır**'a tıklayın. |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` ile çıkarın, ardından çıkarılan klasörde `./bluebird` komutunu çalıştırın. |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` dosyasını açın ve **Bluebird**'ü Uygulamalar'a sürükleyin. İlk açılışta uygulamaya sağ tıklayıp **Aç**'ı seçin (henüz imzalı değil). |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | Arşivi çıkarın ve `Bluebird.exe` dosyasını çalıştırın. SmartScreen görünürse **Daha fazla bilgi → Yine de çalıştır**'a tıklayın. |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` ile çıkarın, ardından çıkarılan klasörde `./bluebird` komutunu çalıştırın. |
 
 > **Not:** Bluebird şimdiye kadar yalnızca macOS'ta test edildi. Windows ve Linux sürümleri sunuluyor ancak henüz tam olarak test edilmedi. Bir sorun çıkarsa lütfen Issues sekmesinden bildirin.
 

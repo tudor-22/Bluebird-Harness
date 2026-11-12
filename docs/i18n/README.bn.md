@@ -23,9 +23,9 @@
 
 | প্ল্যাটফর্ম | ডাউনলোড | ইনস্টল করার নিয়ম |
 | --- | --- | --- |
-| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](../../apps/builds/macos/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` খুলে **Bluebird**-কে Applications-এ টেনে আনুন। প্রথমবার চালানোর সময় অ্যাপে রাইট-ক্লিক করে **Open** বেছে নিন (অ্যাপটি এখনো সাইন করা নয়)। |
-| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](../../apps/builds/windows/Bluebird-0.1.0-win-x64.zip) | জিপ খুলে `Bluebird.exe` চালান। SmartScreen দেখা গেলে **More info → Run anyway** ক্লিক করুন। |
-| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](../../apps/builds/linux/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` দিয়ে এক্সট্র্যাক্ট করুন, তারপর এক্সট্র্যাক্ট করা ফোল্ডার থেকে `./bluebird` চালান। |
+| macOS (Apple Silicon) | [Bluebird-0.1.0-mac-arm64.dmg](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-mac-arm64.dmg) | `.dmg` খুলে **Bluebird**-কে Applications-এ টেনে আনুন। প্রথমবার চালানোর সময় অ্যাপে রাইট-ক্লিক করে **Open** বেছে নিন (অ্যাপটি এখনো সাইন করা নয়)। |
+| Windows (x64) | [Bluebird-0.1.0-win-x64.zip](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-win-x64.zip) | জিপ খুলে `Bluebird.exe` চালান। SmartScreen দেখা গেলে **More info → Run anyway** ক্লিক করুন। |
+| Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | `tar -xzf` দিয়ে এক্সট্র্যাক্ট করুন, তারপর এক্সট্র্যাক্ট করা ফোল্ডার থেকে `./bluebird` চালান। |
 
 > **লক্ষ্য করুন:** এখন পর্যন্ত Bluebird শুধু macOS-এ পরীক্ষা করা হয়েছে। Windows ও Linux বিল্ড দেওয়া আছে, তবে এখনো পুরোপুরি পরীক্ষা করা হয়নি। কিছু ঠিকমতো না চললে Issues ট্যাবে একটি issue খুলুন।
 
