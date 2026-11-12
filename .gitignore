@@ -48,8 +48,5 @@ AGENTS.md
 .cursorrules
 .cursor/
 
-# Local installers (too large for git; publish them as GitHub Release assets)
+# Local installers (too large for git; distributed as GitHub Release assets)
 apps/builds/
-
-# Local recording and demo helpers
-.tools/
