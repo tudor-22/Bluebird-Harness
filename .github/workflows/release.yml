@@ -1,0 +1,57 @@
+name: Build desktop apps
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: macos-14, name: macOS (Apple Silicon) }
+          - { os: windows-latest, name: Windows }
+          - { os: ubuntu-latest, name: Linux (x64) }
+          - { os: ubuntu-24.04-arm, name: Linux (arm64) }
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm --filter @bluebird/desktop test
+      - run: pnpm --filter @bluebird/desktop dist
+      # Starts the built app with an empty data folder and checks the database, API and web page come up.
+      - name: Smoke test (macOS)
+        if: runner.os == 'macOS'
+        run: node apps/desktop/scripts/smoke.mjs apps/desktop/release/mac*/Bluebird.app/Contents/MacOS/Bluebird
+      - name: Smoke test (Linux)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a node apps/desktop/scripts/smoke.mjs apps/desktop/release/linux-unpacked/bluebird --no-sandbox
+      - name: Smoke test (Windows)
+        if: runner.os == 'Windows'
+        run: node apps/desktop/scripts/smoke.mjs apps/desktop/release/win-unpacked/Bluebird.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bluebird-${{ matrix.os }}
+          path: |
+            apps/desktop/release/*.dmg
+            apps/desktop/release/*.exe
+            apps/desktop/release/*.AppImage
+            apps/desktop/release/*.deb
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: dist, merge-multiple: true }
+      - uses: softprops/action-gh-release@v2
+        with: { files: dist/*, generate_release_notes: true }

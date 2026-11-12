@@ -1,0 +1,100 @@
+{
+  "name": "@bluebird/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bluebird, a private local AI assistant",
+  "author": "Tudor Iustin",
+  "main": "src/main.js",
+  "scripts": {
+    "stage": "node scripts/stage.mjs",
+    "dev": "electron .",
+    "dist": "node scripts/stage.mjs && electron-builder --publish never",
+    "test": "node --test src/desktop.test.js",
+    "icons": "bash scripts/make-icons.sh",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.bluebird.app",
+    "productName": "Bluebird",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "stage",
+        "to": "bluebird"
+      }
+    ],
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "extendInfo": {
+        "NSAppleEventsUsageDescription": "Bluebird uses other apps when you ask it to.",
+        "NSMicrophoneUsageDescription": "Bluebird uses the microphone for dictation.",
+        "NSSpeechRecognitionUsageDescription": "Bluebird turns what you say into text when you dictate a message."
+      },
+      "target": "dmg"
+    },
+    "dmg": {
+      "title": "Install Bluebird",
+      "background": "build/dmg-background.png",
+      "iconSize": 104,
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 150,
+          "y": 190,
+          "type": "file"
+        },
+        {
+          "x": 390,
+          "y": 190,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "afterSign": "scripts/adhoc-sign.cjs",
+    "artifactName": "Bluebird-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "icon": "build/icon-1024.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    },
+    "linux": {
+      "icon": "build/icon-1024.png",
+      "category": "Utility",
+      "executableName": "bluebird",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "maintainer": "Tudor Iustin",
+      "synopsis": "A private local AI assistant"
+    }
+  },
+  "optionalDependencies": {
+    "@embedded-postgres/darwin-arm64": "17.11.0-beta.19",
+    "@embedded-postgres/linux-x64": "17.11.0-beta.19",
+    "@embedded-postgres/linux-arm64": "17.11.0-beta.19",
+    "@embedded-postgres/windows-x64": "17.11.0-beta.19"
+  }
+}

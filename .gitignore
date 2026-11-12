@@ -1,0 +1,55 @@
+# Secrets and environment files (the examples are safe to commit)
+.secrets/
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+.next-*/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local data (disposable Postgres cluster, attachment mirrors, server data)
+.data/
+**/.data/
+ops/data/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Local tooling
+.claude/
+research_notes/
+reports/
+
+# Desktop app build output
+apps/desktop/stage/
+apps/desktop/release/
+apps/web/.next-desktop/
+
+# AI-tool instruction files (not part of the project)
+CLAUDE.md
+**/CLAUDE.md
+AGENTS.md
+**/AGENTS.md
+.cursorrules
+.cursor/
+
+# Local installers (too large for git; publish them as GitHub Release assets)
+apps/builds/
+
+# Local recording and demo helpers
+.tools/

@@ -1,0 +1,205 @@
+.folder {
+  display: grid;
+  gap: 12px;
+  padding: 18px 20px 20px;
+}
+
+.title {
+  display: grid;
+  gap: 4px;
+}
+
+.title strong {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.title small {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.folderForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.folderForm input {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 999px;
+  background: var(--app-surface-subtle);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+}
+
+.folderForm input:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 2px;
+}
+
+.save {
+  flex: none;
+  height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--app-surface);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.save:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--app-line-strong);
+}
+
+.badge[data-ready="true"]::before {
+  background: #2f9e6e;
+}
+
+.note {
+  margin: 0;
+  padding: 0 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.error {
+  margin: 0;
+  padding: 0 8px;
+  color: var(--danger-ink);
+  font-size: 13px;
+}
+
+.warn {
+  display: grid;
+  gap: 12px;
+  padding: 16px 20px 18px;
+  border-top: 1px solid var(--app-line);
+  background: color-mix(in srgb, #d49a2a 10%, transparent);
+}
+
+.warn p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.warnActions {
+  display: flex;
+  gap: 10px;
+}
+
+.ghost {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 999px;
+  background: var(--app-surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.grants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.grants code {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--app-control);
+  color: var(--ink);
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  .folderForm {
+    flex-wrap: wrap;
+  }
+
+  .folderForm input {
+    flex-basis: 100%;
+  }
+}
+
+.fields {
+  display: grid;
+  gap: 8px;
+}
+
+.fields input {
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 999px;
+  background: var(--app-surface-subtle);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+}
+
+.folder > input {
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 999px;
+  background: var(--app-surface-subtle);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.inline input {
+  flex: none;
+  width: auto;
+  height: auto;
+}

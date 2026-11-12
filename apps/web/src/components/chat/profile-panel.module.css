@@ -1,0 +1,207 @@
+.page {
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  border: 1px solid var(--app-line);
+  border-radius: 24px;
+  background: var(--app-surface);
+  box-shadow: 0 1px 2px var(--app-border-soft);
+}
+
+.photoRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bigAvatar {
+  display: grid;
+  flex: none;
+  width: 92px;
+  height: 92px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--app-control);
+  color: var(--ink);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.bigAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.solidButton,
+.ghostButton {
+  padding: 8px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--app-surface);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ghostButton {
+  border-color: var(--app-line-strong);
+  background: var(--app-surface);
+  color: var(--ink);
+}
+
+.solidButton:disabled,
+.ghostButton:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.solidButton:focus-visible,
+.ghostButton:focus-visible,
+.input:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 2px;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.field label {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.input {
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 14px;
+  background: var(--app-surface-subtle);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--app-line);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.line strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error,
+.status {
+  margin: 0;
+  padding: 0 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.error {
+  color: var(--danger-ink);
+}
+
+.status {
+  color: var(--ink-soft);
+}
+
+/* Cropping */
+.cropper {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+}
+
+.cropView {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--app-control);
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+  user-select: none;
+}
+
+.cropView:active {
+  cursor: grabbing;
+}
+
+.cropView:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 3px;
+}
+
+.cropView img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  pointer-events: none;
+}
+
+.cropRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+}
+
+.zoom {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  width: min(300px, 100%);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.zoom input {
+  width: 100%;
+  accent-color: var(--bb-accent);
+}
+
+.cropActions {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .field {
+    grid-template-columns: 1fr auto;
+  }
+
+  .field label {
+    grid-column: 1 / -1;
+  }
+}

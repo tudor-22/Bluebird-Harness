@@ -1,0 +1,360 @@
+/* A soft rounded card that follows the theme. Plain code shows a small label
+   and a round copy button; web page code gets a fuller header. */
+.block {
+  --code-bg: #f1f4f6;
+  --code-edge: rgb(var(--ink-rgb) / 0.06);
+  --code-text: #1f2a33;
+  --code-muted: rgb(var(--ink-rgb) / 0.55);
+  --code-button: #ffffff;
+  --code-button-hover: rgb(var(--ink-rgb) / 0.07);
+  --tok-keyword: #cf222e;
+  --tok-function: #8250df;
+  --tok-string: #0a3069;
+  --tok-number: #0550ae;
+  --tok-tag: #116329;
+  --tok-builtin: #953800;
+  --tok-comment: #6e7781;
+  margin: 14px 0;
+  border: 1px solid var(--code-edge);
+  border-radius: 22px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  overflow: hidden;
+}
+
+:global(html[data-theme="dark"]) .block {
+  --code-bg: #232323;
+  --code-edge: rgb(255 255 255 / 0.08);
+  --code-text: #e8e8e8;
+  --code-muted: rgb(255 255 255 / 0.55);
+  --code-button: #2f2f2f;
+  --code-button-hover: rgb(255 255 255 / 0.09);
+  --tok-keyword: #ff7b72;
+  --tok-function: #d2a8ff;
+  --tok-string: #a5d6ff;
+  --tok-number: #79c0ff;
+  --tok-tag: #7ee787;
+  --tok-builtin: #ffa657;
+  --tok-comment: #8b949e;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px 2px 20px;
+}
+
+.block[data-rich="true"] .header {
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+
+.plainLabel {
+  color: var(--code-muted);
+  font-size: 13px;
+}
+
+.richLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--code-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.iconButton,
+.roundButton {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--code-text);
+  cursor: pointer;
+  transition: background-color 160ms var(--ease);
+}
+
+.iconButton:hover {
+  background: var(--code-button-hover);
+}
+
+.iconButton[aria-pressed="true"] {
+  background: var(--code-button-hover);
+}
+
+/* The plain block's buttons sit on the card like small white discs. */
+.roundButton {
+  width: 34px;
+  height: 34px;
+  background: var(--code-button);
+  box-shadow: 0 1px 2px rgb(var(--ink-rgb) / 0.08);
+}
+
+.roundButton:hover {
+  background: var(--code-button-hover);
+}
+
+.iconButton:focus-visible,
+.roundButton:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 2px;
+}
+
+.pre {
+  margin: 0;
+  padding: 6px 20px 20px;
+  max-height: 480px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.pre[data-wrap="true"] .code {
+  width: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  background: transparent;
+  color: var(--code-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, "Cascadia Mono", monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.block :global(.hljs-comment),
+.block :global(.hljs-quote) {
+  color: var(--tok-comment);
+  font-style: italic;
+}
+
+.block :global(.hljs-keyword),
+.block :global(.hljs-selector-tag),
+.block :global(.hljs-literal),
+.block :global(.hljs-doctag) {
+  color: var(--tok-keyword);
+}
+
+.block :global(.hljs-title),
+.block :global(.hljs-section),
+.block :global(.hljs-selector-id),
+.block :global(.hljs-selector-class) {
+  color: var(--tok-function);
+}
+
+.block :global(.hljs-string),
+.block :global(.hljs-addition),
+.block :global(.hljs-regexp),
+.block :global(.hljs-meta .hljs-string) {
+  color: var(--tok-string);
+}
+
+.block :global(.hljs-number),
+.block :global(.hljs-symbol),
+.block :global(.hljs-bullet),
+.block :global(.hljs-variable),
+.block :global(.hljs-template-variable),
+.block :global(.hljs-attr),
+.block :global(.hljs-attribute),
+.block :global(.hljs-selector-attr),
+.block :global(.hljs-selector-pseudo),
+.block :global(.hljs-meta) {
+  color: var(--tok-number);
+}
+
+.block :global(.hljs-name),
+.block :global(.hljs-tag) {
+  color: var(--tok-tag);
+}
+
+.block :global(.hljs-built_in),
+.block :global(.hljs-type),
+.block :global(.hljs-class .hljs-title) {
+  color: var(--tok-builtin);
+}
+
+.block :global(.hljs-deletion) {
+  color: var(--tok-keyword);
+}
+
+.block :global(.hljs-emphasis) {
+  font-style: italic;
+}
+
+.block :global(.hljs-strong) {
+  font-weight: 700;
+}
+
+/* The page preview takes the place of the code, inside the same card. */
+.previewBody {
+  background: #fff;
+  border-top: 1px solid var(--code-edge);
+}
+
+.runFrame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* Full screen */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  background: var(--app-surface);
+  color: var(--ink);
+}
+
+.overlayHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px 8px 20px;
+  border-bottom: 1px solid var(--app-line);
+}
+
+.overlay .richLabel,
+.overlay .plainLabel {
+  color: var(--ink);
+}
+
+.overlay .iconButton {
+  color: var(--ink);
+}
+
+.overlay .iconButton:hover {
+  background: var(--app-hover);
+}
+
+.overlayBody {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+.overlayBody[data-split="true"] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.overlayCode {
+  --code-text: #1f2a33;
+  --code-bg: #f1f4f6;
+  --tok-keyword: #cf222e;
+  --tok-function: #8250df;
+  --tok-string: #0a3069;
+  --tok-number: #0550ae;
+  --tok-tag: #116329;
+  --tok-builtin: #953800;
+  --tok-comment: #6e7781;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+:global(html[data-theme="dark"]) .overlayCode {
+  --code-text: #e8e8e8;
+  --code-bg: #232323;
+  --tok-keyword: #ff7b72;
+  --tok-function: #d2a8ff;
+  --tok-string: #a5d6ff;
+  --tok-number: #79c0ff;
+  --tok-tag: #7ee787;
+  --tok-builtin: #ffa657;
+  --tok-comment: #8b949e;
+}
+
+.overlayCode .pre,
+.pre[data-fill="true"] {
+  height: 100%;
+  max-height: none;
+  box-sizing: border-box;
+  padding: 16px 20px 28px;
+}
+
+.overlayCode :global(.hljs-comment),
+.overlayCode :global(.hljs-quote) {
+  color: var(--tok-comment);
+  font-style: italic;
+}
+
+.overlayCode :global(.hljs-keyword),
+.overlayCode :global(.hljs-selector-tag),
+.overlayCode :global(.hljs-literal),
+.overlayCode :global(.hljs-doctag) {
+  color: var(--tok-keyword);
+}
+
+.overlayCode :global(.hljs-title),
+.overlayCode :global(.hljs-section),
+.overlayCode :global(.hljs-selector-id),
+.overlayCode :global(.hljs-selector-class) {
+  color: var(--tok-function);
+}
+
+.overlayCode :global(.hljs-string),
+.overlayCode :global(.hljs-addition),
+.overlayCode :global(.hljs-regexp) {
+  color: var(--tok-string);
+}
+
+.overlayCode :global(.hljs-number),
+.overlayCode :global(.hljs-symbol),
+.overlayCode :global(.hljs-bullet),
+.overlayCode :global(.hljs-variable),
+.overlayCode :global(.hljs-attr),
+.overlayCode :global(.hljs-attribute),
+.overlayCode :global(.hljs-meta) {
+  color: var(--tok-number);
+}
+
+.overlayCode :global(.hljs-name),
+.overlayCode :global(.hljs-tag) {
+  color: var(--tok-tag);
+}
+
+.overlayCode :global(.hljs-built_in),
+.overlayCode :global(.hljs-type) {
+  color: var(--tok-builtin);
+}
+
+.overlayOutput {
+  min-height: 0;
+  border-left: 1px solid var(--app-line);
+  background: #fff;
+}
+
+@media (max-width: 860px) {
+  .overlayBody[data-split="true"] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .overlayOutput {
+    border-left: 0;
+    border-top: 1px solid var(--app-line);
+  }
+}

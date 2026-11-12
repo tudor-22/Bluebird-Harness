@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --font-display: var(--font-newsreader), "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  /* Bluebird light theme: cool blue-teal neutrals. */
+  --stage: #f3f8fa;
+  --theme: #12829e;
+  --ink: #14202a;
+  --ink-soft: #4f606c;
+  --ink-rgb: 20 32 42;
+  --surface-rgb: 255 255 255;
+  --bb-bg: #f3f8fa;
+  --bb-sidebar: #edf4f7;
+  --bb-surface: #ffffff;
+  --bb-surface-muted: #e5eef2;
+  --bb-border: #d3e0e6;
+  --bb-accent: #12829e;
+  --bb-accent-soft: #d6ecf2;
+  --accent-ink: #0b6279;
+  --danger-ink: #a12d2d;
+  --app-surface: #ffffff;
+  --app-surface-raised: #ffffff;
+  --app-surface-subtle: #f6fafb;
+  --app-surface-muted: #e5eef2;
+  --app-control: #e8f0f3;
+  --app-control-active: #dce8ed;
+  --app-line: #dbe6eb;
+  --app-line-strong: #c3d4dc;
+  --app-border-soft: rgba(20, 32, 42, 0.08);
+  --app-hover: rgba(20, 32, 42, 0.06);
+  --app-overlay: rgba(243, 248, 250, 0.72);
+  --app-bg-translucent: rgba(243, 248, 250, 0.92);
+  --app-shadow: rgba(20, 48, 64, 0.16);
+  --app-send-bg: #0b3c55;
+  --app-send-ink: #ffffff;
+  --app-user-bubble: #e1edf2;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --radius-pill: 999px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --stage: #181818;
+  --theme: #ededed;
+  --ink: #ededed;
+  --ink-soft: #a6a6a6;
+  --bb-bg: #181818;
+  --bb-sidebar: #141414;
+  --bb-surface: #202020;
+  --bb-surface-muted: #252525;
+  --bb-border: #313131;
+  --bb-accent: #ededed;
+  --bb-accent-soft: #2d2d2d;
+  --app-surface: #202020;
+  --app-surface-raised: #202020;
+  --app-surface-subtle: #181818;
+  --app-surface-muted: #292929;
+  --app-control: #1c1c1c;
+  --app-control-active: #292929;
+  --app-border-soft: rgba(255, 255, 255, 0.11);
+  --app-hover: rgba(255, 255, 255, 0.075);
+  --app-overlay: rgba(8, 8, 8, 0.72);
+  --app-bg-translucent: rgba(24, 24, 24, 0.92);
+  --app-shadow: rgba(0, 0, 0, 0.42);
+  --app-send-bg: #ededed;
+  --app-send-ink: #000000;
+  --app-user-bubble: #292929;
+  --ink-rgb: 237 237 237;
+  --surface-rgb: 32 32 32;
+  --accent-ink: #ededed;
+  --danger-ink: #ff9a9a;
+  --app-line: #313131;
+  --app-line-strong: #4a4a4a;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-newsreader);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html[data-theme="dark"] body {
+  background: #181818;
+  color: var(--ink);
+}
+
+html[data-theme="dark"] ::selection {
+  background: #ededed;
+  color: #000000;
+}
+
+body {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(18, 130, 158, 0.07), transparent 28rem),
+    linear-gradient(180deg, #f9fcfd, var(--stage));
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}

@@ -1,0 +1,49 @@
+.mirror {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 11px 8px 5px 10px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* A box as tall as the line, so the chip centres on the text instead of on the font's own box. */
+.slot {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  vertical-align: top;
+  color: transparent;
+}
+
+.chip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  line-height: 24px;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  color: #2f6fd6;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .mirror {
+    font-size: 16px;
+  }
+}

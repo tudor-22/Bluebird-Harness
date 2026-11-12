@@ -1,0 +1,121 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.ring {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.ring:hover,
+.ring:focus-visible {
+  background: var(--app-control);
+}
+
+.track {
+  stroke: rgb(var(--ink-rgb) / 0.18);
+}
+
+.arc {
+  stroke: var(--ink-soft);
+  transition:
+    stroke-dashoffset 400ms var(--ease),
+    stroke 200ms var(--ease);
+}
+
+.arc[data-level="high"] {
+  stroke: #c9702a;
+}
+
+.arc[data-level="full"] {
+  stroke: #c4483f;
+}
+
+.card {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: -6px;
+  z-index: 40;
+  width: 300px;
+  padding: 14px 16px 16px;
+  border: 1px solid var(--bb-border);
+  border-radius: 16px;
+  background: var(--app-surface);
+  box-shadow: 0 10px 30px var(--app-shadow);
+  animation: cardIn 120ms var(--ease) both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.title {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+}
+
+.percent {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.count {
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(var(--ink-rgb) / 0.12);
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #2f6fd6;
+  transition: width 400ms var(--ease);
+}
+
+.fill[data-level="high"] {
+  background: #c9702a;
+}
+
+.fill[data-level="full"] {
+  background: #c4483f;
+}
+
+.note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.4;
+}

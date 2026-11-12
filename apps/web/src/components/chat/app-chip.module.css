@@ -1,0 +1,25 @@
+/* Plain inline, so the name sits on the text's own baseline and the icon hangs a little below it. */
+.chip {
+  display: inline;
+  color: #2f6fd6;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  border-radius: 4px;
+  object-fit: contain;
+  vertical-align: -4px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 4px 8px 2px;
+  font-size: 14px;
+}

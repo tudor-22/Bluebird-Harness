@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key><string>com.bluebird.dictation</string>
+  <key>CFBundleName</key><string>Bluebird Dictation</string>
+  <key>NSMicrophoneUsageDescription</key><string>Bluebird listens through the microphone when you dictate a message.</string>
+  <key>NSSpeechRecognitionUsageDescription</key><string>Bluebird turns what you say into text when you dictate a message.</string>
+</dict>
+</plist>

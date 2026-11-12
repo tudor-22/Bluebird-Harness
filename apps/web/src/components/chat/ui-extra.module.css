@@ -1,0 +1,405 @@
+.diagram,
+.gantt {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--app-line);
+  border-radius: 14px;
+  background: var(--app-surface-subtle);
+}
+
+.diagramTitle {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.diagramSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.diagramLink {
+  fill: none;
+  stroke: var(--app-line-strong);
+  stroke-width: 0.4;
+  transition: stroke 240ms var(--ease);
+}
+
+.diagramLink[data-style="dashed"] {
+  stroke-dasharray: 1.6 1;
+}
+
+.diagramLink[data-style="dotted"] {
+  stroke-dasharray: 0.4 0.9;
+  stroke-linecap: round;
+}
+
+/* A slow march along the line shows which way things flow. */
+.diagramLink[data-flow="true"][data-style="solid"] {
+  stroke-dasharray: 1.4 1.1;
+  animation: bb-flow 1.6s linear infinite;
+}
+
+.diagramLink[data-lit="true"] {
+  stroke: var(--bb-accent);
+  stroke-width: 0.7;
+}
+
+@keyframes bb-flow {
+  to {
+    stroke-dashoffset: -2.5;
+  }
+}
+
+.diagramArrow {
+  fill: var(--app-line-strong);
+}
+
+.diagramLinkLabel {
+  fill: var(--ink-soft);
+  font-size: 2.2px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: var(--app-surface-subtle);
+  stroke-width: 0.9px;
+}
+
+.diagramPart {
+  --hue: 205;
+  cursor: pointer;
+  transition:
+    transform 320ms var(--ease),
+    opacity 200ms var(--ease);
+  outline: none;
+}
+
+.diagramPart rect,
+.diagramPart ellipse,
+.diagramPart polygon,
+.diagramPart path {
+  fill: color-mix(in srgb, hsl(var(--hue) 70% 55%) 14%, var(--app-surface));
+  stroke: color-mix(in srgb, hsl(var(--hue) 65% 50%) 70%, var(--app-line-strong));
+  stroke-width: 0.35;
+  transition:
+    fill 200ms var(--ease),
+    stroke 200ms var(--ease);
+}
+
+.diagramPart:hover rect,
+.diagramPart:hover ellipse,
+.diagramPart:hover polygon,
+.diagramPart:hover path {
+  fill: color-mix(in srgb, hsl(var(--hue) 70% 55%) 26%, var(--app-surface));
+}
+
+.diagramPart text {
+  fill: var(--ink);
+  font-size: 2.7px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.diagramPart[data-active="false"] {
+  opacity: 0.25;
+}
+
+.diagramPart[data-selected="true"] rect,
+.diagramPart[data-selected="true"] ellipse,
+.diagramPart[data-selected="true"] polygon,
+.diagramPart[data-selected="true"] path,
+.diagramPart[data-current="true"] rect,
+.diagramPart[data-current="true"] ellipse,
+.diagramPart[data-current="true"] polygon,
+.diagramPart[data-current="true"] path {
+  fill: color-mix(in srgb, hsl(var(--hue) 70% 55%) 32%, var(--app-surface));
+  stroke: hsl(var(--hue) 70% 50%);
+  stroke-width: 0.7;
+}
+
+.diagramPart:focus-visible rect,
+.diagramPart:focus-visible ellipse,
+.diagramPart:focus-visible polygon,
+.diagramPart:focus-visible path {
+  stroke: var(--bb-accent);
+  stroke-width: 0.8;
+}
+
+.diagramControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.chipDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: hsl(var(--hue, 205) 70% 52%);
+}
+
+.mindLink {
+  fill: none;
+  stroke: hsl(var(--hue) 60% 55%);
+  stroke-width: 0.5;
+  transition: opacity 200ms var(--ease);
+}
+
+.mindNode {
+  --hue: 205;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 200ms var(--ease);
+}
+
+.mindNode rect {
+  fill: color-mix(in srgb, hsl(var(--hue) 70% 55%) 18%, var(--app-surface));
+  stroke: hsl(var(--hue) 60% 52%);
+  stroke-width: 0.35;
+}
+
+.mindNode[data-root="true"] rect {
+  fill: hsl(var(--hue) 65% 48%);
+}
+
+.mindNode[data-root="true"] text {
+  fill: #fff;
+  font-weight: 600;
+}
+
+.mindNode[data-selected="true"] rect,
+.mindNode:focus-visible rect {
+  stroke-width: 0.8;
+}
+
+.mindNode text {
+  fill: var(--ink);
+  font-size: 2.5px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 5px 12px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 999px;
+  background: var(--app-surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--bb-accent);
+  background: var(--bb-accent-soft);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 1px;
+}
+
+.diagramSlider {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.diagramSlider input {
+  width: 100%;
+  accent-color: var(--bb-accent);
+}
+
+.diagramCaption {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.ganttAxis,
+.ganttRow {
+  display: grid;
+  grid-template-columns: minmax(70px, 28%) 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.ganttTicks {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink-soft);
+  font-size: 11.5px;
+}
+
+.ganttRows {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ganttLabelCol {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ganttTrack {
+  position: relative;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--app-control);
+}
+
+.ganttBar {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  min-width: 6px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 5px;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.ganttRow[data-selected="true"] .ganttBar,
+.ganttBar:hover {
+  opacity: 0.85;
+}
+
+.ganttBar:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+.ganttDone {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: rgb(0 0 0 / 0.28);
+}
+
+.ganttUnit {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 11.5px;
+}
+
+.ganttLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.ganttLegend i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-radius: 3px;
+}
+
+.exportButton {
+  justify-self: start;
+  padding: 8px 14px;
+  border: 1px solid var(--app-line-strong);
+  border-radius: 10px;
+  background: var(--app-surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.exportButton:hover {
+  background: var(--app-hover);
+}
+
+.exportButton:focus-visible {
+  outline: 2px solid var(--bb-accent);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagramLink[data-flow="true"] {
+    animation: none;
+  }
+
+  .diagramPart {
+    transition: none;
+  }
+}
+
+/* 3D scene */
+.sceneHost {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 260px;
+  max-height: 520px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: radial-gradient(circle at 50% 35%, rgb(var(--surface-rgb) / 0.9), var(--app-control));
+  cursor: grab;
+  touch-action: none;
+}
+
+.sceneHost:active {
+  cursor: grabbing;
+}
+
+.sceneHost[data-loading="true"] {
+  background: var(--app-control);
+}
+
+.sceneHost canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sceneHint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  text-align: center;
+}
+
+.sceneFallback {
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.sceneFallback p {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+}
+
+.sceneFallback ul {
+  margin: 0;
+  padding-left: 18px;
+}
