@@ -123,7 +123,7 @@ async function findSkillFolders(dir: string, deep: boolean, depth = 0): Promise<
 }
 
 /** Reads a folder into memory: regular files only, no links, with size limits. */
-async function readFolder(folder: string): Promise<Map<string, Buffer>> {
+export async function readFolder(folder: string): Promise<Map<string, Buffer>> {
   const files = new Map<string, Buffer>();
   let total = 0;
   const walk = async (dir: string) => {
