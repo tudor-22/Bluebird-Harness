@@ -280,6 +280,13 @@ pnpm lint
 pnpm db:up && pnpm test
 ```
 
+## Benchmarks
+
+`pnpm bench:computer-use` compares the accessibility control behind the desktop tools with a
+screenshot-and-click baseline on the same machine and tasks, and writes the results to JSON and a
+Markdown table. See [the computer-use benchmark](benchmarks/computer-use.md) for what it measures
+and how to point it at a model.
+
 ## Notes
 
 - Images need a vision model (for example `llava` or `llama3.2-vision`), and

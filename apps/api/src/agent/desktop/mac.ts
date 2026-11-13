@@ -71,7 +71,8 @@ export function createMacAdapter(options: { helper?: string; cacheDir?: string; 
         const args = ["-x", "-t", "jpg"];
         if (app) {
           const ids = ((await call({ op: "window_ids", app })).ids ?? []) as number[];
-          if (ids[0]) args.push("-l", String(ids[0]));
+          // -o leaves out the window shadow, so the picture lines up with the window frame.
+          if (ids[0]) args.push("-o", "-l", String(ids[0]));
         }
         await run("/usr/sbin/screencapture", [...args, file]);
         const bytes = await readFile(file).catch(() => null);
