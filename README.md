@@ -8,7 +8,7 @@ English | <a href="docs/i18n/README.zh-CN.md">简体中文</a> | <a href="docs/i
 
 <h1 align="center">Bluebird Harness</h1>
 
-<p align="center"><b>The only AI harness you'll ever need: turn any computer into an autonomous AI system.</b></p>
+<p align="center"><b>Proactive AI that uses any app on your computer. Local, open source, no account.</b></p>
 
 <p align="center">
   <a href="https://buymeacoffee.com/tudoriustin_"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy Me a Coffee"></a>
@@ -16,6 +16,13 @@ English | <a href="docs/i18n/README.zh-CN.md">简体中文</a> | <a href="docs/i
   <a href="https://huggingface.co/tudor-iustin22"><img src="https://img.shields.io/badge/Hugging%20Face-tudor--iustin22-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green?style=for-the-badge" alt="License: Apache 2.0"></a>
 </p>
+
+<p align="center">
+  <img src="assets/gifs/native-computer-use.gif" alt="Bluebird Harness operating a native app through the accessibility layer" width="100%">
+  <br><sub>No screenshots: Bluebird drives native apps through the accessibility layer, up to 40x faster than screenshot-based computer use in my tests.</sub>
+</p>
+
+**Try it in about five minutes:** download the app for your OS below, open it, and the setup window creates a private local database and offers to install Ollama and a starter model. Then type `@` and pick any app.
 
 **Bluebird Harness** is a private, local-first AI system with 12+ model engines, persistent memory, proactive scheduling, computer use, its own browser and a built-in code assistant. It runs on macOS, Windows and Linux, with no account, no sign-in and no Bluebird cloud.
 
@@ -28,8 +35,6 @@ English | <a href="docs/i18n/README.zh-CN.md">简体中文</a> | <a href="docs/i
 | Linux (x64) | [Bluebird-0.1.0-linux-x64.tar.gz](https://github.com/tudor-22/Bluebird-Harness/releases/download/v0.1.0/Bluebird-0.1.0-linux-x64.tar.gz) | Extract with `tar -xzf`, then run `./bluebird` from the extracted folder. |
 
 > **Heads up:** Bluebird has been tested on macOS so far. The Windows and Linux builds are provided but are not fully tested yet. If something breaks, please open an issue in the Issues tab.
-
-On first launch, a setup window creates a private local database and offers to download Ollama and a starter model. Nothing needs to be installed by hand.
 
 <p align="center">
   <img src="assets/gifs/agent-swarm.gif" alt="Bluebird Harness" width="100%">
@@ -44,9 +49,6 @@ On first launch, a setup window creates a private local database and offers to d
 
 Type `@` to point Bluebird at any installed app. It reads the app's window and operates it through the system's own accessibility actions on macOS, Windows and Linux, so it works with apps that have no integration at all.
 
-<p align="center">
-  <img src="assets/gifs/native-computer-use.gif" alt="Native computer use for any app on your computer" width="100%">
-</p>
 
 ---
 
