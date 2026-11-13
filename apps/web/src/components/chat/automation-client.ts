@@ -41,6 +41,25 @@ export const installSkill = (source: string) =>
 export const deleteSkill = (name: string) =>
   call<{ skills: SkillSummary[] }>(`/api/skills/${encodeURIComponent(name)}`, { method: "DELETE" });
 
+/** What an import from Hermes Agent or OpenClaw found, and what it brought in (or would, in a dry run). */
+export type ImportCounts = { memories: number; skills: number; messages: number };
+export type ImportReport = {
+  dryRun: boolean;
+  sources: {
+    source: "hermes" | "openclaw";
+    root: string;
+    found: ImportCounts & { sessions: number };
+    imported: ImportCounts;
+    existing: ImportCounts;
+    skills: { name: string; from: string; status: "new" | "replace" | "exists" | "failed"; error?: string }[];
+    skipped: { what: string; why: string }[];
+    warnings: string[];
+  }[];
+};
+/** For a settings screen: call with dryRun first to show what is there, then without to import it. */
+export const importFromAgents = (options: { sources?: ("hermes" | "openclaw")[]; dryRun: boolean; history?: boolean; includeBundled?: boolean; overwriteSkills?: boolean }) =>
+  call<ImportReport>("/api/import", json("POST", options));
+
 export const getMcp = () => call<McpResponse>("/api/mcp", { cache: "no-store" });
 export const saveMcp = (servers: McpResponse["servers"]) => call<McpResponse>("/api/mcp", json("PUT", { servers }));
 

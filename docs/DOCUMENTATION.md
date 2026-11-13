@@ -272,6 +272,13 @@ Set these in `apps/api/.env` (see `apps/api/.env.example`):
 If memory or retrieval is not working, check that `ollama pull bge-m3` has
 been run. Chat works without it.
 
+## Import from Hermes Agent and OpenClaw
+
+`pnpm import:agents` brings memories and skills (and, with `--history`, past conversations and
+daily notes) over from Hermes Agent and OpenClaw. `--dry-run` shows what would come over without
+writing anything, and the other agent's files are only ever read. See
+[Import from Hermes Agent and OpenClaw](importing.md).
+
 ## Checks
 
 ```bash

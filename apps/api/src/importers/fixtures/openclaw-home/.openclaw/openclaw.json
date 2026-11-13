@@ -1,0 +1,9 @@
+// OpenClaw config is JSON5: comments, unquoted keys and trailing commas are allowed.
+{
+  agents: {
+    defaults: {
+      workspace: '~/.openclaw/workspace', /* the default, written out */
+      model: "anthropic/claude-sonnet-4",
+    },
+  },
+}

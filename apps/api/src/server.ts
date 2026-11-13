@@ -17,6 +17,7 @@ import { registerServiceAuth } from "./plugins/service-auth";
 import { agentRoutes } from "./routes/agent";
 import { attachmentRoutes } from "./routes/attachments";
 import { meRoutes } from "./routes/me";
+import { importRoutes } from "./routes/import";
 import { memoryRoutes } from "./routes/memory";
 import { modelRoutes } from "./routes/models";
 import { threadRoutes } from "./routes/thread";
@@ -104,6 +105,7 @@ export function buildServer(
   threadRoutes(app, deps);
   meRoutes(app, deps);
   memoryRoutes(app, deps);
+  importRoutes(app, deps);
   modelRoutes(app, deps);
   agentRoutes(app, deps);
   attachmentRoutes(app, deps);
